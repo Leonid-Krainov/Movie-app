@@ -1,12 +1,12 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-moviecard',
-  templateUrl: './moviecard.component.html',
-  styleUrls: ['/moviecard.component.scss']
+  selector: 'app-movietable',
+  templateUrl: './movietable.component.html',
+  styleUrls: ['./movietable.component.scss']
 })
 
-export class MoviecardComponent {
+export class MovietableComponent {
   films = [
     {
       "adult": false,

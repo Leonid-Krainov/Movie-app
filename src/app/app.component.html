@@ -1,7 +1,15 @@
-<h1>Movie list</h1>
+<div  [class]="dark">
+  <h1>Movie list </h1>
+  <div class="buttons">
+    <button (click)="changeView()" class="waves-effect waves-light btn change-view">Change view</button>
+    <button (click)="changeTheme()" class="waves-effect waves-light btn change-theme">Change theme</button>
+  </div>
+  <div class="movies {{visible}}">
+    <app-moviecard></app-moviecard>
+  </div>
+  <div class="table-of-contents {{hidden}}">
+    <app-movietable></app-movietable>
+  </div>
+</div>
 
-<app-moviecard></app-moviecard>
-<app-moviecard></app-moviecard>
-<app-moviecard></app-moviecard>
 
-<!--<router-outlet></router-outlet>-->

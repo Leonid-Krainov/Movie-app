@@ -3,12 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MoviecardComponent} from './MovieCard/moviecard.component';
+import { MoviecardComponent } from './MovieCard/moviecard.component';
+import { MovietableComponent } from './MovieTable/movietable.compoent';
+import {votesTransformPipe} from "./Pipes/votesTransformPipe";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MoviecardComponent
+    MoviecardComponent,
+    MovietableComponent,
+    votesTransformPipe
   ],
   imports: [
     BrowserModule,
@@ -17,4 +21,4 @@ import {MoviecardComponent} from './MovieCard/moviecard.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
