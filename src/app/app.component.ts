@@ -6,13 +6,10 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  visible = "display";
-  hidden = "none-display";
-  dark = "";
-  ngOnInit() {
-    // this.dark = (!localStorage.getItem(this.dark)) ? localStorage.getItem(this.dark) : "";
-  }
+export class AppComponent{
+  visible = localStorage.getItem("visible") || "display";
+  hidden = localStorage.getItem("hidden") || "none-display";
+  dark = localStorage.getItem("dark");
   changeView() {
     if (this.visible == "display") {
       this.visible = "none-display"
@@ -21,9 +18,11 @@ export class AppComponent implements OnInit {
       this.visible = "display"
       this.hidden = "none-display"
     }
+    localStorage.setItem('visible', this.visible);
+    localStorage.setItem('hidden', this.hidden);
   }
   changeTheme() {
     this.dark = (this.dark == "") ? "dark-theme" : "";
-    // localStorage.setItem(dark, this.dark);
+    localStorage.setItem('dark', this.dark);
   }
 }
