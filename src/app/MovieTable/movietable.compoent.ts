@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {movielist} from "../../assets/movielist";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-movietable',
@@ -7,7 +6,10 @@ import {movielist} from "../../assets/movielist";
   styleUrls: ['./movietable.component.scss']
 })
 
-export class MovietableComponent {
-  films = movielist.films;
+export class MovietableComponent implements OnInit {
+  films = JSON.parse(<string>localStorage.getItem('filmData'));
+
+  ngOnInit() {
+  }
 }
 

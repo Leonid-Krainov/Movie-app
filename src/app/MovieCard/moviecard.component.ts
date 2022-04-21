@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {movielist} from "../../assets/movielist";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-moviecard',
@@ -7,7 +6,9 @@ import {movielist} from "../../assets/movielist";
   styleUrls: ['/moviecard.component.scss']
 })
 
-export class MoviecardComponent {
-  films = movielist.films;
-}
+export class MoviecardComponent implements OnInit {
+  films = JSON.parse(<string>localStorage.getItem('filmData'));
 
+  ngOnInit() {
+  }
+}

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MoviecardComponent } from './MovieCard/moviecard.component';
 import { MovietableComponent } from './MovieTable/movietable.compoent';
 import {votesTransformPipe} from "./Pipes/votesTransformPipe";
+import {FormComponent} from "./Form/form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviecardComponent,
     MovietableComponent,
-    votesTransformPipe
+    votesTransformPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,
