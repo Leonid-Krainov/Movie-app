@@ -1,15 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {OnInit, Component} from '@angular/core';
 import {movielist} from '../assets/movielist';
-
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
   visible = localStorage.getItem('visible') || 'display';
-  hidden = localStorage.getItem('hidden') || 'none-display';
   dark = localStorage.getItem('dark');
 
   ngOnInit() {
@@ -17,15 +16,8 @@ export class AppComponent implements OnInit {
   }
 
   changeView() {
-    if (this.visible == 'display') {
-      this.visible = 'none-display'
-      this.hidden = 'display'
-    } else {
-      this.visible = 'display'
-      this.hidden = 'none-display'
-    }
+    this.visible === 'display' ? this.visible = '' : this.visible = 'display'
     localStorage.setItem('visible', this.visible);
-    localStorage.setItem('hidden', this.hidden);
   }
 
   changeTheme() {

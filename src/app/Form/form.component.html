@@ -1,9 +1,29 @@
-<div class="myform">
-  <form action="search">
-    <div class="input-field">
-      <label for="search">Search</label>
-      <input id="search" type="text" class="validate" formControlName="findFilm">
-    </div>
-  </form>
-  <form action="add" class="addfilm"></form>
-</div>
+<form [formGroup]="addForm" (ngSubmit)="addFilm()">
+  <div class="input-field">
+    <label for="title">Title</label>
+    <input id="title" type="text" formControlName="title" >
+  </div>
+  <div class="input-field">
+    <label for="release_date">Release date</label>
+    <input id="release_date" type="text" formControlName="release_date">
+  </div>
+  <div class="input-field">
+    <label for="vote_count">Vote</label>
+    <input id="vote_count" type="text" formControlName="vote_count">
+  </div>
+  <div class="form-control">
+    <label for="poster_path">Load poster</label>
+    <input id="poster_path" type="file" formControlName="poster_path">
+  </div>
+  <button class="waves-effect waves-light btn" [disabled]="!addForm.valid">Add film</button>
+</form>
+<form>
+  <div >
+<!--    <label>Sort by...</label>-->
+    <select class="browser-default">
+      <option value="" disabled selected>Sort by...</option>
+      <option *ngFor='let selector of selectors' [value]="selector.id">{{ selector.name }}</option>
+    </select>
+<!--    <label>Materialize Select</label>-->
+  </div>
+</form>

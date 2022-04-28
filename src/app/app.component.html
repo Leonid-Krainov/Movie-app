@@ -1,16 +1,16 @@
 <div [class]="dark">
   <h1>Movie list </h1>
-  <div class="form">
-    <app-form></app-form>
+  <div>
+    <app-form class="col"></app-form>
   </div>
   <div class="buttons">
     <button (click)="changeView()" class="waves-effect waves-light btn change-view">Change view</button>
     <button (click)="changeTheme()" class="waves-effect waves-light btn change-theme">Change theme</button>
   </div>
-  <div class="movies {{visible}}">
+  <div class="movies" [hidden]="!visible">
     <app-moviecard></app-moviecard>
   </div>
-  <div class="table-of-contents {{hidden}}">
+  <div class="table-of-contents" [hidden]="visible">
     <app-movietable></app-movietable>
   </div>
 </div>

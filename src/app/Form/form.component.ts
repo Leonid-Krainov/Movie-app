@@ -1,18 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms'
+import {ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormGroup, FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-form',
-  templateUrl: '/form.component.html',
-  styleUrls: ['/form.component.scss']
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
 })
 
 export class FormComponent implements OnInit {
-  myForm: FormGroup | undefined;
+  addForm = new FormGroup({
+    title: new FormControl('',Validators.required),
+    release_date: new FormControl('',Validators.required),
+    vote_count: new FormControl('',Validators.required),
+    poster_path: new FormControl('',Validators.required),
+  });
 
-  ngOnInit() {
-    this.myForm = new FormGroup({
-      findFilm: new FormControl()
-    })
+  addFilm() {
+
   }
+
+  selectors = [
+    {id:1, name: "Name"},
+    {id:2, name: "Release date"},
+    {id:3, name: "Votes"},
+  ]
+  ngOnInit() {}
 }

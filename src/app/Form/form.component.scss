@@ -1,7 +1,9 @@
-.myform {
+form {
   padding: 1%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1%;
+  justify-items: center;
+  align-items: center;
 }
