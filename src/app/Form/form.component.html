@@ -13,7 +13,7 @@
   </div>
   <div class="form-control">
     <label for="poster_path">Load poster</label>
-    <input id="poster_path" type="file" formControlName="poster_path">
+    <input id="poster_path" type="file" (input)="imgConvertor($event)" formControlName="poster_path">
   </div>
   <button class="waves-effect waves-light btn" [disabled]="!addForm.valid">Add film</button>
 </form>
